@@ -1,0 +1,60 @@
+/* RTL Styles */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .nav__list {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav__actions {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .contact__item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer__content {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer__links {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer__social {
+    flex-direction: row-reverse;
+}
+
+/* RTL Specific Spacing Adjustments */
+[dir="rtl"] .nav__list {
+    gap: var(--spacing-lg);
+}
+
+[dir="rtl"] .contact__item {
+    gap: var(--spacing-md);
+}
+
+[dir="rtl"] .footer__links {
+    gap: var(--spacing-lg);
+}
+
+[dir="rtl"] .footer__social {
+    gap: var(--spacing-md);
+}
+
+/* RTL Form Elements */
+[dir="rtl"] input,
+[dir="rtl"] textarea {
+    text-align: right;
+}
+
+/* RTL Icons */
+[dir="rtl"] .fa-arrow-right::before {
+    content: "\f060"; /* Change to left arrow */
+}
+
+[dir="rtl"] .fa-arrow-left::before {
+    content: "\f061"; /* Change to right arrow */
+} 
