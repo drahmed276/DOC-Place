@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+	<head>
+		<!-- meta data -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
+		
+		<!-- title of site -->
+		<title>DOC Place</title>
+
+		<!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="assets/images/logo/labcoat icon.png"/>
+	
+		<!--font-awesome.min.css-->
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+		<!--linear icon css-->
+		<link rel="stylesheet" href="assets/css/linearicons.css">
+
+		<!--flaticon.css-->
+		<link rel="stylesheet" href="assets/css/flaticon.css">
+
+		<!--animate.css-->
+		<link rel="stylesheet" href="assets/css/animate.css">
+
+		<!--owl.carousel.css-->
+		<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+		
+		<!--bootstrap.min.css-->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+		
+		<!--style.css-->
+		<link rel="stylesheet" href="assets/css/style.css">
+		
+		<!--responsive.css-->
+		<link rel="stylesheet" href="assets/css/responsive.css">
+		
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="assets/css/rtl.css">
+		<link rel="stylesheet" href="assets/css/dark-mode.css">
+
+		<style>
+		.featured-cars-txt h3 {
+			margin-bottom: 2px;
+		}
+		
+		.featured-cars-img {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+			height: 250px;
+			border-bottom: 1px solid #dadfe9;
+			overflow: hidden;
+		}
+		
+		.featured-cars-img img {
+			max-width: 100%;
+			max-height: 100%;
+			width: auto;
+			height: auto;
+			object-fit: contain;
+			transition: transform 0.3s ease;
+		}
+		
+		.featured-cars-img:hover img {
+			transform: scale(1.05);
+		}
+		
+		.single-featured-cars {
+			transition: all 0.3s ease;
+		}
+		
+		.single-featured-cars:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+		}
+		
+		.featured-cars-txt .welcome-btn {
+			margin-top: 10px;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			text-align: center;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.college{
+			background: #f8f9fb;
+			padding:112px 0 120px;
+			margin-top: 0;
+			padding-top: 0;
+		}
+		.college-content{padding-top:96px;}
+
+		.search-results-animation {
+			animation: fadeInUp 0.5s ease-out;
+		}
+
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(30px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		/* Social Pages Button Styling */
+		.social-page-link {
+			text-decoration: none;
+			color: inherit;
+			display: block;
+			transition: all 0.3s ease;
+		}
+
+		.social-page-link:hover {
+			text-decoration: none;
+			color: inherit;
+			/* Remove transform: scale */
+		}
+
+		.social-page-item,
+		.social-page-item:hover,
+		.social-page-item:active,
+		.social-page-item:focus {
+			transition: none !important;
+			transform: none !important;
+			box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+			border-width: 2px !important;
+			border-style: solid !important;
+			box-sizing: border-box !important;
+			background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+			min-height: 120px;
+		}
+
+		.social-page-item:hover,
+		.social-page-item:active,
+		.social-page-item:focus {
+			font-weight: bold;
+			color: #007bff;
+		}
+
+		.social-page-item .single-service-icon {
+			background: #007bff;
+			color: white;
+			transition: all 0.3s ease;
+			border-radius: 50%;
+			margin: 0 auto 20px;
+			width: 80px;
+			height: 80px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.social-page-item:hover .single-service-icon {
+			/* Remove transform: scale */
+		}
+
+		.social-page-item .single-service-icon i {
+			transition: all 0.3s ease;
+		}
+
+		.social-page-item .service-content-wrapper {
+			text-align: center;
+			padding: 20px;
+		}
+
+		.social-page-item .service-content-wrapper h2 {
+			margin-bottom: 10px;
+			font-weight: 600;
+			color: #333;
+		}
+
+		.social-page-item .service-content-wrapper p {
+			color: #666;
+			margin: 0;
+			font-size: 14px;
+		}
+
+		/* Facebook specific styling */
+		.social-page-link[href*="facebook"] .social-page-item {
+			border-color: #1877f2;
+		}
+
+		.social-page-link[href*="facebook"] .social-page-item .single-service-icon {
+			background: #1877f2;
+		}
+
+		/* Instagram specific styling */
+		.social-page-link[href*="instagram"] .social-page-item {
+			border-color: #e4405f;
+		}
+
+		.social-page-link[href*="instagram"] .social-page-item .single-service-icon {
+			background: #e4405f;
+		}
+
+		/* WhatsApp specific styling */
+		.social-page-link[href*="wa.me"] .social-page-item {
+			border-color: #25d366;
+		}
+
+		.social-page-link[href*="wa.me"] .social-page-item .single-service-icon {
+			background: #25d366;
+		}
+
+		.center-social-pages {
+			display: flex;
+			justify-content: center;
+			align-items: stretch;
+			gap: 32px;
+			flex-wrap: wrap;
+		}
+
+		.social-page-item {
+			width: 260px;
+			min-height: 260px;
+			max-width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		@media (max-width: 991px) {
+			.center-social-pages {
+				flex-direction: row;
+				flex-wrap: wrap;
+				gap: 20px;
+			}
+			.social-page-item {
+				width: 45%;
+				min-width: 180px;
+				max-width: 100%;
+				margin-bottom: 16px;
+			}
+		}
+
+		@media (max-width: 767px) {
+			.center-social-pages {
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+			}
+			.social-page-item,
+			.social-page-item:hover,
+			.social-page-item:active,
+			.social-page-item:focus {
+				width: 100% !important;
+				min-width: 0 !important;
+				min-height: 100px !important;
+				max-width: 100% !important;
+				margin: 0 0 12px 0 !important;
+				padding: 0 !important;
+				box-sizing: border-box !important;
+			}
+		}
+
+		.out-of-stock-label {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			background: #dc3545;
+			color: #fff;
+			padding: 4px 10px;
+			border-radius: 6px;
+			font-size: 13px;
+			font-weight: bold;
+			z-index: 2;
+		}
+		/* Cart icon fixed positioning for navbar - improved */
+		.cart-navbar-icon-fixed {
+			position: fixed;
+			top: 18px;
+			right: 32px;
+			z-index: 2000;
+			display: flex;
+			align-items: center;
+			background: rgba(255,255,255,0.95);
+			border-radius: 50%;
+			box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+			padding: 6px 10px 6px 10px;
+			transition: box-shadow 0.2s;
+		}
+		.cart-navbar-icon-fixed:hover {
+			box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+		}
+		#cartIcon {
+			display: inline-flex;
+			align-items: center;
+			position: relative;
+			font-size: 30px;
+			margin-left: 10px;
+			margin-right: 0;
+			padding: 0 2px;
+			color: #007bff;
+			transition: color 0.2s;
+		}
+		#cartIcon:hover {
+			color: #0056b3;
+		}
+		#cartCount {
+			position: absolute;
+			top: -10px;
+			right: -14px;
+			background: #dc3545;
+			color: #fff;
+			font-size: 15px;
+			padding: 3px 8px;
+			border-radius: 50%;
+			min-width: 22px;
+			text-align: center;
+			line-height: 1.2;
+			font-weight: bold;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+			border: 2px solid #fff;
+		}
+		@media (max-width: 991px) {
+			.cart-navbar-icon-fixed {
+				top: 12px;
+				right: 12px;
+				padding: 4px 8px 4px 8px;
+			}
+			#cartIcon {
+				font-size: 25px;
+				margin-left: 4px;
+			}
+			#cartCount {
+				font-size: 12px;
+				top: -8px;
+				right: -10px;
+				min-width: 16px;
+				padding: 2px 6px;
+			}
+		}
+		@media (max-width: 767px) {
+			.cart-navbar-icon-fixed {
+				top: 8px;
+				right: 6px;
+				padding: 3px 6px 3px 6px;
+			}
+			#cartIcon {
+				font-size: 20px;
+				margin-left: 2px;
+			}
+			#cartCount {
+				font-size: 10px;
+				top: -6px;
+				right: -7px;
+				min-width: 13px;
+				padding: 1px 4px;
+			}
+		}
+		/* Cart icon in navbar links */
+		.nav-cart {
+			display: flex;
+			align-items: center;
+			margin-left: 10px;
+		}
+		.nav-cart #cartIcon {
+			display: inline-flex;
+			align-items: center;
+			position: relative;
+			font-size: 22px;
+			color: #007bff;
+			transition: color 0.2s;
+			padding: 0 2px;
+		}
+		.nav-cart #cartIcon:hover {
+			color: #0056b3;
+		}
+		.nav-cart #cartCount {
+			position: absolute;
+			top: -8px;
+			right: -12px;
+			background: #dc3545;
+			color: #fff;
+			font-size: 12px;
+			padding: 2px 7px;
+			border-radius: 50%;
+			min-width: 16px;
+			text-align: center;
+			line-height: 1.2;
+			font-weight: bold;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+			border: 2px solid #fff;
+		}
+		@media (max-width: 991px) {
+			.nav-cart #cartIcon {
+				font-size: 19px;
+			}
+			.nav-cart #cartCount {
+				font-size: 10px;
+				top: -7px;
+				right: -9px;
+				min-width: 12px;
+				padding: 1.5px 5px;
+			}
+		}
+		@media (max-width: 767px) {
+			.nav-cart #cartIcon {
+				font-size: 16px;
+			}
+			.nav-cart #cartCount {
+				font-size: 8.5px;
+				top: -6px;
+				right: -7px;
+				min-width: 10px;
+				padding: 1px 3.5px;
+			}
+		}
+		</style>
+
+	</head>
+	
+	<body>
+		<!--[if lte IE 9]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+		<![endif]-->
+
+		<!--welcome-hero start -->
+		<section id="home" class="welcome-hero">
+
+			<!-- top-area Start -->
+			<div class="top-area">
+				<div class="header-area">
+					<!-- Start Navigation -->
+					<nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+
+						<div class="container">
+
+							<!-- Start Header Navigation -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+									<i class="fa fa-bars"></i>
+								</button>
+								<a class="navbar-brand" href="index.html" style="font-family: 'Arial', serif;">doc place<span></span></a>
+							</div><!--/.navbar-header-->
+							<!-- End Header Navigation -->
+
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+								<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+									<li class="scroll active"><a href="#home">home</a></li>
+									<li class="scroll"><a href="#service">Pages</a></li>
+									<li class="scroll"><a href="#college">Most Popular</a></li>
+									<li class="scroll"><a href="#featured-cars">Products</a></li>
+									<li class="scroll"><a href="#clients-say">Reviews</a></li>
+								</ul><!--/.nav -->
+							</div><!-- /.navbar	-collapse -->
+						</div><!--/.container-->
+					</nav><!--/nav-->
+					<!-- End Navigation -->
+				</div><!--/.header-area-->
+				<div class="clearfix"></div>
+
+			</div><!-- /.top-area-->
+			<!-- top-area End -->
+
+			<div class="container">
+				<div class="welcome-hero-txt">
+					<h2>Everything A Medical Student need in one Place</h2>
+					<p>
+						Where medical style meets creativity
+					</p>
+					<button class="welcome-btn scroll" onclick="document.getElementById('featured-cars').scrollIntoView({behavior: 'smooth'})">View Products</button>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="model-search-content">
+							<div class="row">
+								<div class="col-md-offset-3 col-md-3 col-sm-12">
+									<div class="single-model-search">
+										<h2>Product Category</h2>
+										<div class="model-select-icon">
+											<select class="form-control" id="productCategory">
+												<option value="">All Categories</option>
+												<option value="balto">Balto</option>
+												<option value="scrub">Scrub</option>
+												<option value="tshirts-hoodies">T-shirts & Hoodies</option>
+												<option value="accessories">Accessories</option>
+												<option value="bones">Bones</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-12">
+									<div class="single-model-search">
+										<h2>Size</h2>
+										<div class="model-select-icon">
+											<select class="form-control" id="productSize">
+												<option value="">All Sizes</option>
+												<option value="M">Medium (M)</option>
+												<option value="L">Large (L)</option>
+												<option value="XL">Extra Large (XL)</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-12">
+									<div class="single-model-search text-center">
+										<button class="welcome-btn model-search-btn" onclick="performSearch()">
+											Search
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section><!--/.welcome-hero-->
+		<!--welcome-hero end -->
+
+		<!--service start -->
+		<section id="service" class="service">
+			<div class="container">
+				<div class="service-content">
+					<div class="row center-social-pages">
+						<div class="col-md-3 col-sm-2">
+							<a href="https://www.Facebook.com/doctorplace" class="social-page-link" target="_blank">
+								<div class="single-service-item social-page-item">
+									<div class="single-service-icon" style="padding: 20px;">
+										<i class="fab fa-facebook" style="font-size: 48px;"></i>
+									</div>
+									<div class="service-content-wrapper">
+										<h2>Facebook <span></span></h2>
+										<p>Follow us</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<a href="https://www.Instagram.com/docplace.eg" class="social-page-link" target="_blank">
+								<div class="single-service-item social-page-item">
+									<div class="single-service-icon" style="padding: 20px;">
+										<i class="fab fa-instagram" style="font-size: 48px;"></i>
+									</div>
+									<div class="service-content-wrapper">
+										<h2>Instagram <span></span></h2>
+										<p>Follow us</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<a href="https://wa.me/+201140905700" class="social-page-link" target="_blank">
+								<div class="single-service-item social-page-item">
+									<div class="single-service-icon" style="padding: 20px;">
+										<i class="fab fa-whatsapp" style="font-size: 48px;"></i>
+									</div>
+									<div class="service-content-wrapper">
+										<h2>WhatsApp <span></span></h2>
+										<p>Follow us</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div><!--/.container-->
+
+		</section><!--/.service-->
+		<!--service end-->
+
+		<!--college start -->
+		<section id="college" class="college">
+			<div class="container">
+				<div class="section-header">
+					
+					<h2 style="padding-top: 50px ;">Most Popular Products</h2>
+				</div><!--/.section-header-->
+				<div class="new-cars-content">
+					<div class="owl-carousel owl-theme" id="new-cars-carousel">
+						<div class="new-cars-item">
+							<div class="single-new-cars-item">
+								<div class="row">
+									<div class="col-md-7 col-sm-12">
+										<div class="new-cars-img" style="max-width: 70%; margin: 0 auto;">
+											<img src="assets/images/most pop/balto png.png" alt="img" style="width: 100%; height: auto;"/>
+										</div>
+									</div>
+									<div class="col-md-5 col-sm-12">
+										<div class="new-cars-txt">
+											<h2><a href="#">Classic Balto<span> </span></a></h2>
+											<p>                               </p>
+											<p> Very comfort balto during your shift
+											</p>
+											<h3 class="new-cars-para2">
+												 450 EGP 
+											</h3>
+											<button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
+												Buy Now
+											</button>
+										</div><!--/.new-cars-txt-->	
+									</div><!--/.col-->
+								</div><!--/.row-->
+							</div><!--/.single-new-cars-item-->
+						</div><!--/.new-cars-item-->
+						<div class="new-cars-item">
+							<div class="single-new-cars-item">
+								<div class="row">
+									<div class="col-md-7 col-sm-12">
+										<div class="new-cars-img" style="max-width: 70%; margin: 0 auto;">
+											<img src="assets/images/most pop/scrub navo blue.png" alt="img"/>
+										</div><!--/.new-cars-img-->
+									</div>
+									<div class="col-md-5 col-sm-12">
+										<div class="new-cars-txt">
+											<h2><a href="#">Navo Blue Scrub</a></h2>
+											<p>
+												Very comfort balto during your shift 
+											</p>
+											<h3 class="new-cars-para2">
+												450 EGP
+											</h3>
+											<button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
+												Buy Now
+											</button>
+										</div><!--/.new-cars-txt-->	
+									</div><!--/.col-->
+								</div><!--/.row-->	
+							</div><!--/.single-new-cars-item-->
+						</div><!--/.new-cars-item-->
+						<div class="new-cars-item">
+							<div class="single-new-cars-item">
+								<div class="row">
+									<div class="col-md-7 col-sm-12">
+										<div class="new-cars-img" style="max-width: 60%; margin: 0 auto;">
+											<img src="assets/images/most pop/doc T-shirt.png" alt="img" style="width: 100%; height: auto;"/>
+										</div><!--/.new-cars-img-->
+									</div>
+									<div class="col-md-5 col-sm-12">
+										<div class="new-cars-txt">
+											<h2><a href="#">Black T-shirt</a></h2>
+											<p>
+												Very comfort balto during your shift
+											<h3 class="new-cars-para2">
+												450 EGP
+											</h3>
+											<button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
+												Buy Now
+											</button>
+										</div><!--/.new-cars-txt-->	
+									</div><!--/.col-->
+								</div><!--/.row-->
+							</div><!--/.single-new-cars-item-->
+						</div><!--/.new-cars-item-->
+					</div><!--/#new-cars-carousel-->
+				</div><!--/.new-cars-content-->
+			</div><!--/.container-->
+
+		</section><!--/.new-cars-->
+		<!--new-cars end -->
+
+		<!--featured-cars start -->
+		<section id="featured-cars" class="featured-cars" style="padding-top: 1px;">
+			<div class="container">
+				<div class="section-header">
+					<p>checkout <span>Other</span> Products </p>
+					<h2>DOC Place's Products</h2>
+				</div><!--/.section-header-->
+				<div class="featured-cars-content">
+					<div class="row">
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/balto.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">Classic Balto</a></h2>
+									<h3>300 EGP</h3>
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Classic Balto'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/dentist balto.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">Dentist Balto</a></h2>
+									<h3>300 EGP</h3>
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Dentist Balto'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/Black scrub.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#"> Black Scrub</a></h2>
+									<h3>450 EGP</h3>
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Black Scrub'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/navo blue scrub.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#"> Navo Blue Scrub</a></h2>
+									<h3>450 EGP</h3>
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Navo Blue Scrub'">Buy Now</button>
+								</div>
+							</div>
+						</div>						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/green scrub.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#"> Green Scrub</a></h2>
+									<h3>450 EGP</h3>
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Green Scrub'">Buy Now</button>
+								</div>
+							</div>
+						</div>						
+
+						
+						
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/Blue Scrub.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">blue Scrub</a></h2>
+									<h3>450 EGP</h3>
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Blue Scrub'">Buy Now</button>
+								</div>
+							</div>
+						</div>		
+	
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/gray scrub.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#"> Gray Scrub</a></h2>
+									<h3>450 EGP</h3>
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Gray Scrub'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/white scrub.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">White Scrub</a></h2>
+									<h3>450 EGP</h3>
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=White Scrub'">Buy Now</button>
+								</div>
+							</div>
+						</div>				
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/Stethoscope.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>High-Quality <span class="featured-mi-span"></span></p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">Stethoscope</a></h2>
+									<h3>450 EGP</h3>
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Stethoscope'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/doc gray Hoodie.png" alt="Gray Hoodie">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">Gray Hoodie</a></h2>
+									<h3>450 EGP</h3>
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Gray Hoodie'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/doc T -shirt.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Melton<span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">Black T-shirt</a></h2>
+									<h3>450 EGP</h3>
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Black T-shirt'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/doc mug.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">Doc Mug</a></h2>
+									<h3>150 EGP</h3> 
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Doc Mug'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/heart medal.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">medal heart shaped</a></h2>
+									<h3>150 EGP</h3> 
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Heart Medal'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/upper limb.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">upper limb (Bones)</a></h2>
+									<h3>950 EGP</h3> 
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='#https://wa.me/+201140905700?text=upper limb'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="assets/images/PNGs/lower limb.png" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>Cotton Ketan <span class="featured-mi-span"></span> (M - L - XL)</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">Lower Limb (Bones)</a></h2>
+									<h3>950 EGP</h3> 
+									
+									<button class="welcome-btn new-cars-btn" onclick="window.location.href='https://wa.me/+201140905700?text=Lower Limb'">Buy Now</button>
+								</div>
+							</div>
+						</div>
+						
+						</div>
+					</div>
+				</div>
+			</div><!--/.container-->
+			<!-- Show All Products Button -->
+			<div class="container" style="margin-top: 40px;">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<button id="showAllProductsBtn" class="welcome-btn" onclick="showAllProducts()" style="padding: 15px 30px; font-size: 16px; display: none;">
+							<i class="fa fa-list" style="margin-right: 8px;"></i>
+							Show All Products
+						</button>
+					</div>
+				</div>
+			</div>a
+
+		</section><!--/.featured-cars-->
+		<!--featured-cars end -->
+
+		<!-- clients-say strat -->
+		<section id="clients-say"  class="clients-say">
+			<div class="container">
+				<div class="section-header">
+					<h2>what our clients say</h2>
+				</div><!--/.section-header-->
+
+				<div class="row">
+					<div class="owl-carousel testimonial-carousel">
+						<div class="col-sm-3 col-xs-12">
+							<div class="single-testimonial-box">
+								<div class="testimonial-description">
+									<div class="testimonial-info">
+										<div class="testimonial-img">
+											<img src="assets/images/clients/Mazen Alaa.jpg" alt="image of clients person" />
+										</div><!--/.testimonial-img-->
+									</div><!--/.testimonial-info-->
+									<div class="testimonial-comment">
+										<p>
+											بجد خدمتكم ممتازة جدًا، كل حاجة وصلت في معادها والشغل طالع نضيف ومحترف. أكيد مش آخر تعامل بينا إن شاء الله 
+										</p>
+									</div><!--/.testimonial-comment-->
+									<div class="testimonial-person">
+										<h2><a href="#">Mazen Alaa</a></h2>
+										<h4>Cairo</h4>
+										<div class="review-stars" style="color: #ffc107; font-size: 16px; margin-top: 5px;">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+										</div>
+									</div><!--/.testimonial-person-->
+								</div><!--/.testimonial-description-->
+							</div><!--/.single-testimonial-box-->
+						</div><!--/.col-->
+						<div class="col-sm-3 col-xs-12">
+							<div class="single-testimonial-box">
+								<div class="testimonial-description">
+									<div class="testimonial-info">
+										<div class="testimonial-img">
+											<img src="assets/images/clients/ahmed sabry.jpg" alt="image of clients person" />
+										</div><!--/.testimonial-img-->
+									</div><!--/.testimonial-info-->
+									<div class="testimonial-comment">
+										<p>
+											ناس فاهمة شغلها بجد، بتشرح وتفهمك قبل ما تشتغل وبتطلعلك اللي في دماغك بالظبط.. شكراً بجد ❤️ </p>
+									</div><!--/.testimonial-comment-->
+									<div class="testimonial-person">
+										<h2><a href="#">Ahmed Sabri</a></h2>
+										<h4>Cairo</h4>
+										<div class="review-stars" style="color: #ffc107; font-size: 16px; margin-top: 5px;">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+										</div>
+									</div><!--/.testimonial-person-->
+								</div><!--/.testimonial-description-->
+							</div><!--/.single-testimonial-box-->
+						</div><!--/.col-->
+						<div class="col-sm-3 col-xs-12">
+							<div class="single-testimonial-box">
+								<div class="testimonial-description">
+									<div class="testimonial-info">
+										<div class="testimonial-img">
+											<img src="assets/images/clients/hana elgohary.jpg" alt="image of clients person" />
+										</div><!--/.testimonial-img-->
+									</div><!--/.testimonial-info-->
+									<div class="testimonial-comment">
+										<p>
+											بجد الحاجة طلعت حلوة أوي زي ما كنت متخيلة، الخامة ناعمة أوي والتفصيل مظبوط، والتوصيل جالي بسرعة.. شكراً ليكم 
+										</p>
+									</div><!--/.testimonial-comment-->
+									<div class="testimonial-person">
+										<h2><a href="#">Hana Elgohary</a></h2>
+										<h4>Cairo</h4>
+										<div class="review-stars" style="color: #ffc107; font-size: 16px; margin-top: 5px;">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+										</div>
+									</div><!--/.testimonial-person-->
+								</div><!--/.testimonial-description-->
+							</div><!--/.single-testimonial-box-->
+						</div><!--/.col-->
+						<div class="col-sm-3 col-xs-12">
+							<div class="single-testimonial-box">
+								<div class="testimonial-description">
+									<div class="testimonial-info">
+										<div class="testimonial-img">
+											<img src="assets/images/clients/Yasmeen Anwar.jpg" alt="image of clients person" />
+										</div><!--/.testimonial-img-->
+									</div><!--/.testimonial-info-->
+									<div class="testimonial-comment">
+										<p>
+											كنت مترددة في الأول، بس بصراحة طلعت تجربة فوق الممتاز. الدعم سريع ومفيش لف ودوران. أنصح أي حد بيكم
+									</div><!--/.testimonial-comment-->
+									<div class="testimonial-person">
+										<h2><a href="#">Yasmeen Anwar</a></h2>
+										<h4>Cairo</h4>
+										<div class="review-stars" style="color: #ffc107; font-size: 16px; margin-top: 5px;">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="far fa-star"></i>
+										</div>
+									</div><!--/.testimonial-person-->
+								</div><!--/.testimonial-description-->
+							</div><!--/.single-testimonial-box-->
+						</div><!--/.col-->
+						<div class="col-sm-3 col-xs-12">
+							<div class="single-testimonial-box">
+								<div class="testimonial-description">
+									<div class="testimonial-info">
+										<div class="testimonial-img">
+											<img src="assets/images/clients/Youssef Khaled.jpg" alt="image of clients person" />
+										</div><!--/.testimonial-img-->
+									</div><!--/.testimonial-info-->
+									<div class="testimonial-comment">
+										<p>
+											أول مرة أطلب ومش آخر مرة إن شاء الله. البالطو خامته تقيلة ومحترمة، بيفرق فعلًا في الشغل عن أي حاجة تانية
+										</p>
+									</div><!--/.testimonial-comment-->
+									<div class="testimonial-person">
+										<h2><a href="#">Youssef Khaled</a></h2>
+										<h4>Cairo</h4>
+										<div class="review-stars" style="color: #ffc107; font-size: 16px; margin-top: 5px;">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+										</div>
+									</div><!--/.testimonial-person-->
+								</div><!--/.testimonial-description-->
+							</div><!--/.single-testimonial-box-->
+						</div><!--/.col-->
+					</div><!--/.testimonial-carousel-->
+				</div><!--/.row-->
+			</div><!--/.container-->
+
+						<!-- Compact Review Form Section -->
+						<div class="container" style="margin-top: 40px;">
+							<div class="row">
+								<div class="col-md-8 col-md-offset-2">
+									<div class="review-form-container" style="background: #f8f9fa; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border: 1px solid #e9ecef;">
+										<div class="section-header text-center" style="margin-bottom: 30px;">
+											<h3 style="color: #333; font-weight: 600; margin-bottom: 10px;">Share Your Experience</h3>
+											<p style="color: #666; font-size: 16px;">Help others by leaving a review about your experience with DOC Place</p>
+										</div>
+										
+										<form id="reviewForm" onsubmit="submitReview(event)" enctype="multipart/form-data">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="reviewerName" style="font-weight: 600; color: #555; font-size: 14px; margin-bottom: 8px;">Full Name *</label>
+														<input type="text" class="form-control" id="reviewerName" name="reviewerName" required 
+															   style="border: 2px solid #e9ecef; border-radius: 8px; padding: 12px; font-size: 14px; transition: border-color 0.3s ease;"
+															   placeholder="Enter your full name">
+														<div class="invalid-feedback" id="nameError"></div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="reviewerLocation" style="font-weight: 600; color: #555; font-size: 14px; margin-bottom: 8px;">City *</label>
+														<input type="text" class="form-control" id="reviewerLocation" name="reviewerLocation" required 
+															   style="border: 2px solid #e9ecef; border-radius: 8px; padding: 12px; font-size: 14px; transition: border-color 0.3s ease;"
+															   placeholder="e.g., Cairo, Alexandria">
+														<div class="invalid-feedback" id="locationError"></div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="row" style="margin-top: 20px;">
+												<div class="col-md-6">
+															<div class="form-group">
+														<label for="reviewerPhoto" style="font-weight: 600; color: #555; font-size: 14px; margin-bottom: 8px;">Your Photo (Optional)</label>
+														<div class="file-upload-wrapper" style="position: relative;">
+															<input type="file" id="reviewerPhoto" name="reviewerPhoto" accept="image/*" style="display: none;" onchange="handlePhotoUpload(event)">
+															<label for="reviewerPhoto" id="customFileLabel" class="welcome-btn"
+															  style="cursor:pointer; display:inline-flex; align-items:center; justify-content:center; padding:12px 24p	x; background:linear-gradient(135deg, #007bff 0%, #0056b3 100%); color:white; border-radius:8px; font-weight:600;">
+															  <i class="fa fa-image" style="margin-right:5px;"></i> Choose Image
+															</label>
+															<span id="fileName" style="margin-left:10px; color:#555; font-size:14px;"></span>
+														</div>
+														<div id="photoPreview" style="margin-top: 15px; display: none; text-align: center;">
+															<div style="position: relative; display: inline-block;">
+																<img id="previewImg" src="" alt="Preview" 
+																	 style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #007bff; box-shadow: 0 3px 10px rgba(0,0,0,0.2);">
+																<button type="button" onclick="removePhoto()" 
+																		style="position: absolute; top: -5px; right: -5px; background: #dc3545; color: white; border: none; border-radius: 50%; width: 25px; height: 25px; font-size: 12px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+																	<i class="fa fa-times"></i>
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label style="font-weight: 600; color: #555; font-size: 14px; margin-bottom: 8px;">Rating *</label>
+														<div class="rating-container" style="background: white; padding: 15px; border-radius: 8px; border: 2px solid #e9ecef;">
+															<div class="rating-stars" style="font-size: 24px; color: #ddd; text-align: center;">
+																<i class="fa fa-star" data-rating="1" style="cursor: pointer; margin: 0 5px; transition: all 0.2s ease;"></i>
+																<i class="fa fa-star" data-rating="2" style="cursor: pointer; margin: 0 5px; transition: all 0.2s ease;"></i>
+																<i class="fa fa-star" data-rating="3" style="cursor: pointer; margin: 0 5px; transition: all 0.2s ease;"></i>
+																<i class="fa fa-star" data-rating="4" style="cursor: pointer; margin: 0 5px; transition: all 0.2s ease;"></i>
+																<i class="fa fa-star" data-rating="5" style="cursor: pointer; margin: 0 5px; transition: all 0.2s ease;"></i>
+															</div>
+															<div class="rating-text" style="text-align: center; margin-top: 8px; font-size: 14px; color: #666;">
+																Click to rate your experience
+															</div>
+															<input type="hidden" id="reviewRating" name="reviewRating" required>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="form-group" style="margin-top: 20px;">
+												<label for="reviewText" style="font-weight: 600; color: #555; font-size: 14px; margin-bottom: 8px;">Your Review *</label>
+												<textarea class="form-control" id="reviewText" name="reviewText" rows="4" required 
+														  style="border: 2px solid #e9ecef; border-radius: 8px; padding: 15px; font-size: 14px; resize: vertical; transition: border-color 0.3s ease;"
+														  placeholder="Share your experience with DOC Place... What did you like? How was the quality? Would you recommend us?"></textarea>
+												<div class="invalid-feedback" id="reviewError"></div>
+												<div class="form-text" style="font-size: 12px; color: #666; margin-top: 5px;">
+													<i class="fa fa-lightbulb-o"></i> Tip: Be specific about what you liked and how it helped you
+												</div>
+											</div>
+											
+											<div class="form-group" style="margin-top: 20px;">
+												<div class="form-check" style="display: flex; align-items: center;">
+													<input class="form-check-input" type="checkbox" id="consentCheck" name="consentCheck" required 
+														   style="margin-right: 12px; width: 22px; height: 22px; accent-color: #007bff;">
+													<label class="form-check-label" for="consentCheck" style="font-size: 15px; color: #555; vertical-align: middle; margin-bottom: 0;">
+														I agree to share my review publicly and consent to DOC Place using my name and photo in testimonials *
+													</label>
+												</div>
+											</div>
+											<div class="text-center" style="margin-top: 30px;">
+												<button type="submit" id="submitBtn" class="welcome-btn" 
+														style="padding: 15px 40px; font-size: 16px; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); border: none; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,123,255,0.3);">
+													<i class="fa fa-paper-plane" style="margin-right: 8px;"></i>
+													Submit Review
+												</button>
+												<div id="submitStatus" style="margin-top: 15px; display: none;">
+													<div class="alert alert-info" style="padding: 10px; border-radius: 5px; font-size: 14px;">
+														<i class="fa fa-spinner fa-spin" style="margin-right: 5px;"></i>
+														Submitting your review...
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-header text-center">
+							<h2 style="padding-top: 50px;">Client Screenshots</h2>
+							<p style="padding: 15px;">See what our clients are saying about us</p>
+						</div>
+					</div>
+				</div>
+				<div class="row" style="display: flex; align-items: stretch;">
+					<div class="col-md-3 d-flex" style="padding: 15px; display: flex; flex-direction: column; justify-content: flex-start;">
+						<div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-start;">
+							<h4 style="text-align: center; padding-bottom: 10px;">Black Scrub</h4>
+							<div class="screenshot-box" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+								<img src="assets/images/clients/clients reviews/1.png" alt="Client Screenshot 1" class="img-responsive" style="width: 100%; height: auto; display: block;">
+								<div class="screenshot-overlay"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 d-flex" style="padding: 15px; display: flex; flex-direction: column; justify-content: flex-start;">
+						<div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-start;">
+							<h4 style="text-align: center; padding-bottom: 10px;">Balto</h4>
+							<div class="screenshot-box" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+								<img src="assets/images/clients/clients reviews/2.png" alt="Client Screenshot 2" class="img-responsive" style="width: 100%; height: auto; display: block;">
+								<div class="screenshot-overlay"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 d-flex" style="padding: 15px; display: flex; flex-direction: column; justify-content: flex-start;">
+						<div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-start;">
+							<h4 style="text-align: center; padding-bottom: 10px;">Navo Blue Scrub</h4>
+							<div class="screenshot-box" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+								<img src="assets/images/clients/clients reviews/3.png" alt="Client Screenshot 3" class="img-responsive" style="width: 100%; height: auto; display: block;">
+								<div class="screenshot-overlay"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 d-flex" style="padding: 15px; display: flex; flex-direction: column; justify-content: flex-start;">
+						<div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-start;">
+							<h4 style="text-align: center; padding-bottom: 10px;">Green Scrub</h4>
+							<div class="screenshot-box" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+								<img src="assets/images/clients/clients reviews/4.png" alt="Client Screenshot 4" class="img-responsive" style="width: 100%; height: auto; display: block;">
+								<div class="screenshot-overlay"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+					<div id="more-screenshots" class="collapse">
+						<div class="row" style="display: flex; align-items: stretch;">
+						<div class="col-md-3 d-flex" style="padding: 15px; display: flex; flex-direction: column; justify-content: flex-start;">
+							<div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-start;">
+								<h4 style="text-align: center; padding-bottom: 10px;">Dentist Balto</h4>
+								<div class="screenshot-box" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+									<img src="assets/images/clients/clients reviews/6.png" alt="Client Screenshot 3" class="img-responsive" style="width: 100%; height: auto; display: block;">
+									<div class="screenshot-overlay"></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 d-flex" style="padding: 15px; display: flex; flex-direction: column; justify-content: flex-start;">
+							<div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-start;">
+								<h4 style="text-align: center; padding-bottom: 10px;">Navo Blue Scrub</h4>
+								<div class="screenshot-box" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+									<img src="assets/images/clients/clients reviews/1.png" alt="Client Screenshot 3" class="img-responsive" style="width: 100%; height: auto; display: block;">
+									<div class="screenshot-overlay"></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 d-flex" style="padding: 15px; display: flex; flex-direction: column; justify-content: flex-start;">
+							<div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-start;">
+								<h4 style="text-align: center; padding-bottom: 10px;">Navo Blue Scrub</h4>
+								<div class="screenshot-box" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+									<img src="assets/images/clients/clients reviews/1.png" alt="Client Screenshot 3" class="img-responsive" style="width: 100%; height: auto; display: block;">
+									<div class="screenshot-overlay"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-3 d-flex" style="padding: 15px; display: flex; flex-direction: column; justify-content: flex-start;">
+							<div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-start;">
+								<h4 style="text-align: center; padding-bottom: 10px;">Navo Blue Scrub</h4>
+								<div class="screenshot-box" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+									<img src="assets/images/clients/clients reviews/more.png" alt="Client Screenshot 3" class="img-responsive" style="width: 100%; height: auto; display: block;">
+									<div class="screenshot-overlay"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-12 text-center" style="padding: 15px;">
+						<button class="welcome-btn" type="button" data-toggle="collapse" data-target="#more-screenshots" aria-expanded="false" aria-controls="more-screenshots" onclick="toggleButtonText(this)">
+							<span class="view-more-text">View More </span>
+							<span class="view-less-text" style="display: none;">View Less</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+
+
+		</section><!--/.clients-say-->	
+		<!-- clients-say end -->
+
+		<!--contact start-->
+		<footer id="contact"  class="contact">
+			<div class="container">
+				<div class="footer-top">
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+							<div class="single-footer-widget">
+								<div class="footer-logo">
+									<a href="index.html">DOC Place</a>
+								</div>
+								<p>
+									
+	We specialize in providing everything doctors and medical students need: lab coats, scrubs, doctor-themed t-shirts, and unique medical accessories — perfect for study, work, or daily wear.
+
+
+								</p>
+								<div class="footer-contact">
+									<p>info@docplace.com</p>
+									<p>+20 1140905700</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-6">
+							<div class="single-footer-widget">
+								<h2>about doc place</h2>
+								<ul>
+									<li><a href="#">about us</a></li>
+									<li><a href="#">career</a></li>
+									<li><a href="#">terms <span> of service</span></a></li>
+									<li><a href="#">privacy policy</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-3 col-xs-12">
+							<div class="single-footer-widget">
+								<h2>our products</h2>
+								<div class="row">
+									<div class="col-md-12">
+										<ul style="list-style: none; padding-left: 0;">
+											<li><a href="javascript:void(0);" class="footer-category-link" data-category="balto"><strong>Balto</strong></a></li>
+											<li><a href="javascript:void(0);" class="footer-category-link" data-category="scrub"><strong>Scrub</strong></a></li>
+											<li><a href="javascript:void(0);" class="footer-category-link" data-category="tshirts-hoodies"><strong>T-shirts & Hoodies</strong></a></li>
+											<li><a href="javascript:void(0);" class="footer-category-link" data-category="accessories"><strong>Accessories</strong></a></li>
+											<li><a href="javascript:void(0);" class="footer-category-link" data-category="bones"><strong>Bones</strong></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-offset-1 col-md-3 col-sm-6">
+							<div class="single-footer-widget">
+								<h2>news letter</h2>
+								<div class="footer-newsletter">
+									<p>
+										Subscribe to get latest news  update and informations
+									</p>
+								</div>
+								<div class="hm-foot-email">
+									<div class="foot-email-box">
+										<input type="text" class="form-control" placeholder="Add Email">
+									</div><!--/.foot-email-box-->
+									<div class="foot-email-subscribe">
+										<span><i class="fa fa-arrow-right"></i></span>
+									</div><!--/.foot-email-icon-->
+								</div><!--/.hm-foot-email-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="row">
+						<div class="col-sm-6">
+							<p>
+								&copy; copyright.designed and developed by <a href="https://www.facebook.com/ahmed.sameh.137543/">Ahmed Sameh</a>.
+							</p><!--/p-->
+						</div>
+						<div class="col-sm-6">
+							<div class="footer-social">
+								<a href="https://www.Facebook.com/doctorplace" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+								<a href="https://www.Instagram.com/docplace.eg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+								<a href="https://wa.me/+201140905700" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+							
+							</div>
+						</div>
+					</div>
+				</div><!--/.footer-copyright-->
+			</div><!--/.container-->
+
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+		</footer><!--/.contact-->
+		<!--contact end-->
+
+
+		
+		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+		<script src="assets/js/jquery.js"></script>
+		
+		<!--modernizr.min.js-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+		<script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+		<!--owl.carousel.js-->
+		<script src="assets/js/owl.carousel.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+		<!--Custom JS-->
+		<script src="assets/js/custom.js"></script>
+		
+		<!-- Search Functionality -->
+		<script>
+			// Products database
+			const products = [
+				{
+					id: 1,
+					name: "Classic Balto",
+					category: "balto",
+					size: ["M", "L", "XL"],
+					color: "white",
+					material: "cotton",
+					price: 300,
+					image: "assets/images/PNGs/balto png.png",
+					description: "Very comfort balto during your shift",
+					availability: "available"
+				},
+				{
+					id: 2,
+					name: "Dentist Balto",
+					category: "balto",
+					size: ["M", "L", "XL"],
+					color: "white",
+					material: "cotton",
+					price: 300,
+					image: "assets/images/PNGs/dentist balto.png",
+					description: "Professional dentist balto",
+					availability: "available"
+				},
+				{
+					id: 3,
+					name: "Black Scrub",
+					category: "scrub",
+					size: ["M", "L", "XL"],
+					color: "black",
+					material: "cotton",
+					price: 450,
+					image: "assets/images/PNGs/Black scrub.png",
+					description: "Comfortable black scrub",
+					availability: "available"
+				},
+				{
+					id: 4,
+					name: "Navo Blue Scrub",
+					category: "scrub",
+					size: ["M", "L", "XL"],
+					color: "blue",
+					material: "cotton",
+					price: 450,
+					image: "assets/images/PNGs/navo blue scrub.png",
+					description: "Professional blue scrub",
+					availability: "available"
+				},
+				{
+					id: 5,
+					name: "Green Scrub",
+					category: "scrub",
+					size: ["M", "L", "XL"],
+					color: "green",
+					material: "cotton",
+					price: 450,
+					image: "assets/images/PNGs/green scrub.png",
+					description: "Comfortable green scrub",
+					availability: "available"
+				},
+				{
+					id: 6,
+					name: "White Scrub",
+					category: "scrub",
+					size: ["M", "L", "XL"],
+					color: "white",
+					material: "cotton",
+					price: 450,
+					image: "assets/images/PNGs/white scrub.png",
+					description: "Clean white scrub",
+					availability: "available"
+				},
+				{
+					id: 7,
+					name: "Gray Scrub",
+					category: "scrub",
+					size: ["M", "L", "XL"],
+					color: "gray",
+					material: "cotton",
+					price: 450,
+					image: "assets/images/PNGs/gray scrub.png",
+					description: "Professional gray scrub",
+					availability: "available"
+				},
+				{
+					id: 8,
+					name: "Stethoscope",
+					category: "accessories",
+					size: ["one-size"],
+					color: "black",
+					material: "high-quality",
+					price: 450,
+					image: "assets/images/PNGs/Stethoscope.png",
+					description: "High-quality stethoscope",
+					availability: "available"
+				},
+				{
+					id: 9,
+					name: "Gray Hoodie",
+					category: "tshirts-hoodies",
+					size: ["M", "L", "XL"],
+					color: "gray",
+					material: "cotton",
+					price: 450,
+					image: "assets/images/PNGs/doc gray Hoodie.png",
+					description: "Comfortable gray hoodie",
+					availability: "available"
+				},
+				{
+					id: 10,
+					name: "Black T-shirt",
+					category: "tshirts-hoodies",
+					size: ["M", "L", "XL"],
+					color: "black",
+					material: "melton",
+					price: 450,
+					image: "assets/images/PNGs/doc T -shirt.png",
+					description: "Stylish black t-shirt",
+					availability: "available"
+				},
+				{
+					id: 11,
+					name: "Doc Mug",
+					category: "accessories",
+					size: ["one-size"],
+					color: "white",
+					material: "ceramic",
+					price: 150,
+					image: "assets/images/PNGs/doc mug.png",
+					description: "Perfect coffee mug for doctors",
+					availability: "available"
+				},
+				{
+					id: 12,
+					name: "Blue Scrub",
+					category: "scrub",
+					size: ["M", "L", "XL"],
+					color: "blue",
+					material: "cotton",
+					price: 450,
+					image: "assets/images/PNGs/Blue Scrub.png",
+					description: "Comfortable blue scrub",
+					availability: "available"
+				},
+				{
+					id: 13,
+					name: "Upper Limb (Bones)",
+					category: "bones",
+					size: ["one-size"],
+					color: null,
+					material: null,
+					price: 950,
+					image: "assets/images/PNGs/upper limb.png",
+					description: "Upper limb bones model",
+					availability: "available"
+				},
+				{
+					id: 14,
+					name: "Lower Limb (Bones)",
+					category: "bones",
+					size: ["one-size"],
+					color: null,
+					material: null,
+					price: 950,
+					image: "assets/images/PNGs/lower limb.png",
+					description: "Lower limb bones model",
+					availability: "not-available"
+				},
+				{
+					id: 15,
+					name: "Medal Heart Shaped",
+					category: "accessories",
+					size: ["one-size"],
+					color: null,
+					material: null,
+					price: 150,
+					image: "assets/images/PNGs/heart medal.png",
+					description: "Heart shaped medal",
+					availability: "available"
+				}
+			];
+
+			// Search function
+			function performSearch() {
+				const category = document.getElementById('productCategory').value;
+				const size = document.getElementById('productSize').value;
+
+				// Check if any filter is applied
+				const hasFilters = category || size;
+
+				// Filter products
+				let filteredProducts = products.filter(product => {
+					let matches = true;
+
+					// Category filter
+					if (category) {
+						if (product.category !== category) {
+							matches = false;
+						}
+					}
+
+					// Size filter
+					if (size && !product.size.includes(size)) {
+						matches = false;
+					}
+
+					// Show all products in category filter, even if not-available
+					// But if size is also filtered, keep the original logic
+					if (category && !size) {
+						// Do not filter by availability
+					} else if (hasFilters && product.availability !== 'available') {
+						matches = false;
+					}
+
+					return matches;
+				});
+
+				// Display results
+				displaySearchResults(filteredProducts);
+				
+				// Show/hide the "Show All Products" button based on filters
+				const showAllBtn = document.getElementById('showAllProductsBtn');
+				if (hasFilters) {
+					showAllBtn.style.display = 'inline-block';
+				} else {
+					showAllBtn.style.display = 'none';
+				}
+			}
+
+			// Display search results
+			function displaySearchResults(results) {
+				const featuredCarsContent = document.querySelector('.featured-cars-content .row');
+				
+				if (results.length === 0) {
+					featuredCarsContent.innerHTML = `
+						<div class="col-md-12 text-center">
+							<h3>No products found matching your criteria</h3>
+							<p>Try adjusting your search filters</p>
+							<button class="welcome-btn" onclick="resetSearch()">Reset Search</button>
+						</div>
+					`;
+					return;
+				}
+
+			let html = '';
+			results.forEach((product) => {
+				const sizeText = product.size.includes('one-size') ? 'One Size' : `(M - L - XL)`;
+				const materialText = product.material === 'high-quality' ? 'High-Quality' : 
+								product.material === 'ceramic' ? 'Ceramic' : 
+								(product.material ? `Cotton ${product.material.charAt(0).toUpperCase() + product.material.slice(1)}` : '');
+
+				html += `
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="single-featured-cars">
+							<div class="featured-img-box" style="position:relative;">
+								<div class="featured-cars-img">
+									<img src="${product.image}" alt="${product.name}">
+									${product.availability === "not-available" ? '<span class="out-of-stock-label">Out of Stock</span>' : ''}
+								</div>
+								<div class="featured-model-info">
+									<p>${materialText} <span class="featured-mi-span"></span> ${sizeText}</p>
+								</div>
+							</div>
+							<div class="featured-cars-txt">
+								<h2><a href="#">${product.name}</a></h2>
+								<h3>${product.price} EGP</h3>
+								<button class="welcome-btn new-cars-btn"
+									${product.availability === "not-available" ? 'disabled style="background:#ccc;cursor:not-allowed;"' : `onclick=\"addToCart(${product.id})\" style=\"background:#007bff;cursor:pointer;\"`}>
+									${product.availability === "not-available" ? 'Out of Stock' : 'Add to Cart'}
+								</button>
+							</div>
+						</div>
+					</div>
+				`;
+			});
+
+			featuredCarsContent.innerHTML = html;
+
+			// Scroll to products section
+			document.getElementById('featured-cars').scrollIntoView({behavior: 'smooth'});
+		}
+
+		// Reset search function
+		function resetSearch() {
+			document.getElementById('productCategory').value = '';
+			document.getElementById('productSize').value = '';
+			
+			// Reload original products
+			location.reload();
+		}
+
+		// Show all products function
+		function showAllProducts() {
+			// Clear search filters
+			document.getElementById('productCategory').value = '';
+			document.getElementById('productSize').value = '';
+			
+			// Reload the page to restore the original product order and display
+			location.reload();
+		}
+
+		// Add event listeners for real-time search (optional)
+		document.addEventListener('DOMContentLoaded', function() {
+			// Add change event listeners for real-time filtering
+			const searchInputs = ['productCategory', 'productSize'];
+			searchInputs.forEach(id => {
+				document.getElementById(id).addEventListener('change', function() {
+					// Uncomment the line below if you want real-time search
+					// performSearch();
+				});
+			});
+		});
+
+		document.addEventListener('DOMContentLoaded', function() {
+			document.querySelectorAll('.footer-category-link').forEach(function(link) {
+				link.addEventListener('click', function(e) {
+					var category = this.getAttribute('data-category');
+					var catSelect = document.getElementById('productCategory');
+					var sizeSelect = document.getElementById('productSize');
+					if (catSelect) catSelect.value = category;
+					if (sizeSelect) sizeSelect.value = '';
+					if (typeof performSearch === 'function') performSearch();
+					var productsSection = document.getElementById('featured-cars');
+					if (productsSection) productsSection.scrollIntoView({behavior: 'smooth'});
+				});
+			});
+		});
+
+		// Star Rating System
+		document.addEventListener('DOMContentLoaded', function() {
+			const stars = document.querySelectorAll('.rating-stars .fa-star');
+			const ratingInput = document.getElementById('reviewRating');
+			const ratingText = document.querySelector('.rating-text');
+			
+			stars.forEach(star => {
+				star.addEventListener('click', function() {
+					const rating = this.getAttribute('data-rating');
+					ratingInput.value = rating;
+					
+					// Reset all stars
+					stars.forEach(s => s.style.color = '#ddd');
+					
+					// Color stars up to selected rating
+					stars.forEach(s => {
+						if (s.getAttribute('data-rating') <= rating) {
+							s.style.color = '#ffc107';
+						}
+					});
+					
+					// Update rating text
+					const ratingMessages = {
+						'1': 'Poor - Not satisfied',
+						'2': 'Fair - Could be better',
+						'3': 'Good - Satisfied',
+						'4': 'Very Good - Happy with service',
+						'5': 'Excellent - Highly recommended!'
+					};
+					ratingText.textContent = ratingMessages[rating] || 'Click to rate your experience';
+				});
+				
+				// Hover effects
+				star.addEventListener('mouseenter', function() {
+					const rating = this.getAttribute('data-rating');
+					
+					stars.forEach(s => {
+						if (s.getAttribute('data-rating') <= rating) {
+							s.style.color = '#ffc107';
+						} else {
+							s.style.color = '#ddd';
+						}
+					});
+				});
+			});
+			
+			// Reset stars on mouse leave
+			document.querySelector('.rating-stars').addEventListener('mouseleave', function() {
+				const currentRating = ratingInput.value;
+				stars.forEach(s => {
+					if (s.getAttribute('data-rating') <= currentRating) {
+						s.style.color = '#ffc107';
+					} else {
+						s.style.color = '#ddd';
+					}
+				});
+			});
+		});
+
+		// Photo Upload Preview with Validation
+		function handlePhotoUpload(event) {
+			const file = event.target.files[0];
+			const maxSize = 2 * 1024 * 1024; // 2MB
+			const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+			
+			if (file) {
+				// Validate file size
+				if (file.size > maxSize) {
+					alert('File size must be less than 2MB');
+					event.target.value = '';
+					return;
+				}
+				
+				// Validate file type
+				if (!allowedTypes.includes(file.type)) {
+					alert('Please upload a valid image file (JPEG, PNG, or GIF)');
+					event.target.value = '';
+					return;
+				}
+				
+				const reader = new FileReader();
+				reader.onload = function(e) {
+					document.getElementById('previewImg').src = e.target.result;
+					document.getElementById('photoPreview').style.display = 'block';
+				};
+				reader.readAsDataURL(file);
+			}
+		}
+
+		function removePhoto() {
+			document.getElementById('reviewerPhoto').value = '';
+			document.getElementById('photoPreview').style.display = 'none';
+			document.getElementById('previewImg').src = '';
+		}
+
+		// Form Validation
+		function validateForm() {
+			let isValid = true;
+			const errors = {};
+			
+			// Name validation
+			const name = document.getElementById('reviewerName').value.trim();
+			if (name.length < 2) {
+				errors.name = 'Name must be at least 2 characters long';
+				isValid = false;
+			}
+			
+			// City validation
+			const city = document.getElementById('reviewerLocation').value.trim();
+			if (city.length < 2) {
+				errors.location = 'City must be at least 2 characters long';
+				isValid = false;
+			}
+			
+			// Rating validation
+			const rating = document.getElementById('reviewRating').value;
+			if (!rating) {
+				errors.rating = 'Please select a rating';
+				isValid = false;
+			}
+			
+			// Review validation
+			const review = document.getElementById('reviewText').value.trim();
+			if (review.length < 10) {
+				errors.review = 'Review must be at least 10 characters long';
+				isValid = false;
+			}
+			
+			// Consent validation
+			const consent = document.getElementById('consentCheck').checked;
+			if (!consent) {
+				errors.consent = 'You must agree to share your review publicly';
+				isValid = false;
+			}
+			
+			// Display errors
+			clearErrors();
+			if (!isValid) {
+				Object.keys(errors).forEach(field => {
+					const errorElement = document.getElementById(field + 'Error');
+					if (errorElement) {
+						errorElement.textContent = errors[field];
+						errorElement.style.display = 'block';
+					}
+				});
+			}
+			
+			return isValid;
+		}
+
+		function clearErrors() {
+			const errorElements = document.querySelectorAll('.invalid-feedback');
+			errorElements.forEach(element => {
+				element.style.display = 'none';
+				element.textContent = '';
+			});
+		}
+
+		// Submit Review Function with Backend Integration
+		async function submitReview(event) {
+			event.preventDefault();
+			
+			// Validate form
+			if (!validateForm()) {
+				return;
+			}
+			
+			const formData = new FormData(event.target);
+			const submitBtn = document.getElementById('submitBtn');
+			const submitStatus = document.getElementById('submitStatus');
+			
+			// Show loading state
+			submitBtn.disabled = true;
+			submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Submitting...';
+			submitStatus.style.display = 'block';
+			
+			try {
+				// Backend API endpoint (replace with your actual endpoint)
+				const response = await fetch('/api/reviews', {
+					method: 'POST',
+					body: formData
+				});
+				
+				if (response.ok) {
+					const result = await response.json();
+					showSuccessMessage(result.message || 'Review submitted successfully!');
+					resetForm();
+				} else {
+					const error = await response.json();
+					throw new Error(error.message || 'Failed to submit review');
+				}
+			} catch (error) {
+				console.error('Error submitting review:', error);
+				
+				// Fallback for demo/development (remove in production)
+				if (error.message.includes('fetch')) {
+					// Simulate successful submission for demo
+					setTimeout(() => {
+						showSuccessMessage(`Thank you for your review! 
+						
+Your review has been submitted and will be reviewed by our team within 24-48 hours. Once approved, it will be published on our website.
+
+You'll receive an email notification when your review goes live!`);
+						resetForm();
+					}, 2000);
+				} else {
+					showErrorMessage(error.message || 'Failed to submit review. Please try again.');
+				}
+			} finally {
+				// Reset button state
+				submitBtn.disabled = false;
+				submitBtn.innerHTML = '<i class="fa fa-paper-plane"></i> Submit Review';
+				submitStatus.style.display = 'none';
+			}
+		}
+
+		function showSuccessMessage(message) {
+			// Create success alert
+			const alertDiv = document.createElement('div');
+			alertDiv.className = 'alert alert-success';
+			alertDiv.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999; padding: 15px; border-radius: 8px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 400px;';
+			alertDiv.innerHTML = `
+				<i class="fa fa-check-circle" style="margin-right: 8px;"></i>
+				${message}
+			`;
+			
+			document.body.appendChild(alertDiv);
+			
+			// Remove after 5 seconds
+			setTimeout(() => {
+				alertDiv.remove();
+			}, 5000);
+		}
+
+		function showErrorMessage(message) {
+			// Create error alert
+			const alertDiv = document.createElement('div');
+			alertDiv.className = 'alert alert-danger';
+			alertDiv.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999; padding: 15px; border-radius: 8px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 400px;';
+			alertDiv.innerHTML = `
+				<i class="fa fa-exclamation-circle" style="margin-right: 8px;"></i>
+				${message}
+			`;
+			
+			document.body.appendChild(alertDiv);
+			
+			// Remove after 5 seconds
+			setTimeout(() => {
+				alertDiv.remove();
+			}, 5000);
+		}
+
+		function resetForm() {
+			// Reset form fields
+			document.getElementById('reviewForm').reset();
+			
+			// Reset rating stars
+			document.querySelectorAll('.rating-stars .fa-star').forEach(s => s.style.color = '#ddd');
+			document.getElementById('reviewRating').value = '';
+			document.querySelector('.rating-text').textContent = 'Click to rate your experience';
+			
+			// Reset photo preview
+			document.getElementById('photoPreview').style.display = 'none';
+			document.getElementById('previewImg').src = '';
+			
+			// Clear errors
+			clearErrors();
+		}
+		</script>
+		
+		<!-- Add Cart JS -->
+		<script>
+		// --- Cart Logic ---
+		let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+		function saveCart() {
+			localStorage.setItem('cart', JSON.stringify(cart));
+		}
+		function updateCartCount() {
+			document.getElementById('cartCount').textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+		}
+		function addToCart(productId) {
+			const product = products.find(p => p.id === productId);
+			if (!product) return;
+			const existing = cart.find(item => item.id === productId);
+			if (existing) {
+				existing.qty += 1;
+			} else {
+				cart.push({ id: productId, name: product.name, price: product.price, image: product.image, qty: 1 });
+			}
+			saveCart();
+			updateCartCount();
+			showCartAddedMsg();
+		}
+		function showCartAddedMsg() {
+			const alertDiv = document.createElement('div');
+			alertDiv.className = 'alert alert-success';
+			alertDiv.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999; padding: 15px; border-radius: 8px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 400px;';
+			alertDiv.innerHTML = `<i class="fa fa-check-circle" style="margin-right: 8px;"></i>Product added to cart`;
+			document.body.appendChild(alertDiv);
+			setTimeout(() => { alertDiv.remove(); }, 2000);
+		}
+		function openCartModal() {
+			document.getElementById('cartModal').style.display = 'flex';
+			renderCart();
+		}
+		function closeCartModal() {
+			document.getElementById('cartModal').style.display = 'none';
+		}
+		function renderCart() {
+			const cartItemsDiv = document.getElementById('cartItems');
+			if (cart.length === 0) {
+				cartItemsDiv.innerHTML = '<div style="text-align:center;color:#888;">Cart is empty</div>';
+				document.getElementById('cartTotal').textContent = '';
+				return;
+			}
+			let html = '<ul style="list-style:none;padding:0;">';
+			let total = 0;
+			cart.forEach((item, idx) => {
+				total += item.price * item.qty;
+				html += `<li style="display:flex;align-items:center;margin-bottom:12px;">
+					<img src="${item.image}" style="width:40px;height:40px;object-fit:cover;border-radius:6px;margin-right:10px;">
+					<span style="flex:1;">${item.name} <span style='color:#888;font-size:13px;'>x${item.qty}</span></span>
+					<span style="font-weight:bold;">${item.price * item.qty} EGP</span>
+					<button onclick="removeFromCart(${item.id})" style="background:none;border:none;color:#dc3545;font-size:18px;margin-left:8px;cursor:pointer;"><i class='fa fa-trash'></i></button>
+				</li>`;
+			});
+			html += '</ul>';
+			cartItemsDiv.innerHTML = html;
+			document.getElementById('cartTotal').textContent = `Total: ${total} EGP`;
+		}
+		function removeFromCart(id) {
+			cart = cart.filter(item => item.id !== id);
+			saveCart();
+			updateCartCount();
+			renderCart();
+		}
+		document.getElementById('checkoutBtn').onclick = function() {
+			if (cart.length === 0) return;
+			alert('Thank you for your order! We will contact you to complete the purchase.');
+			cart = [];
+			saveCart();
+			updateCartCount();
+			closeCartModal();
+		};
+		// Initialize cart count on page load
+		updateCartCount();
+		</script>
+		
+		<!-- Cart Modal -->
+		<div id="cartModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);z-index:9999;align-items:center;justify-content:center;">
+			<div style="background:#fff;padding:30px 20px 20px 20px;max-width:400px;width:90vw;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative;">
+				<button onclick="closeCartModal()" style="position:absolute;top:10px;right:10px;background:none;border:none;font-size:20px;color:#dc3545;cursor:pointer;"><i class="fa fa-times"></i></button>
+				<h3 style="margin-bottom:20px;">Shopping Cart</h3>
+				<div id="cartItems"></div>
+				<div id="cartTotal" style="margin-top:15px;font-weight:bold;"></div>
+				<button id="checkoutBtn" class="welcome-btn" style="width:100%;margin-top:20px;">Checkout</button>
+			</div>
+		</div>
+		<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v19.0'
+    });
+  };
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/ar_AR/sdk/xfbml.customerchat.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-customerchat"
+     attribution="biz_inbox"
+     page_id="109135465277611">
+</div>
+
+	</body>
+	
+</html>

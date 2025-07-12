@@ -1,0 +1,194 @@
+/* Modern Professional Dark Mode */
+[data-theme="dark"] body,
+[data-theme="dark"] {
+    background: #181A1B !important;
+    color: #f1f1f1 !important;
+    transition: background 0.4s, color 0.4s;
+}
+
+[data-theme="dark"] .navbar,
+[data-theme="dark"] .header-area,
+[data-theme="dark"] nav.navbar.bootsnav {
+    background: #181A1B !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    border-bottom: 1px solid #23272A;
+}
+
+[data-theme="dark"] .navbar-header a.navbar-brand,
+[data-theme="dark"] nav.navbar.bootsnav ul.nav > li > a {
+    color: #f1f1f1 !important;
+}
+
+[data-theme="dark"] .navbar-header a.navbar-brand span {
+    color: #60A5FA !important;
+}
+
+[data-theme="dark"] .welcome-hero,
+[data-theme="dark"] .hero {
+    background: #181A1B !important;
+}
+
+[data-theme="dark"] .college,
+[data-theme="dark"] .service,
+[data-theme="dark"] .featured-cars,
+[data-theme="dark"] .clients-say {
+    background: #202225 !important;
+}
+
+[data-theme="dark"] .section-header h2,
+[data-theme="dark"] .section-header p,
+[data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 {
+    color: #f1f1f1 !important;
+}
+
+[data-theme="dark"] p, [data-theme="dark"] li, [data-theme="dark"] a, [data-theme="dark"] label {
+    color: #b0b3b8 !important;
+}
+
+[data-theme="dark"] a:hover, [data-theme="dark"] a:focus {
+    color: #3B82F6 !important;
+    text-decoration: underline;
+}
+
+[data-theme="dark"] .single-featured-cars,
+[data-theme="dark"] .single-service-item,
+[data-theme="dark"] .single-testimonial-box,
+[data-theme="dark"] .dashboard-container,
+[data-theme="dark"] .product-form,
+[data-theme="dark"] .product-table,
+[data-theme="dark"] .product-form-modal .product-form {
+    background: #23272A !important;
+    color: #f1f1f1 !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    border-radius: 12px;
+}
+
+[data-theme="dark"] .featured-cars-img,
+[data-theme="dark"] .new-cars-img,
+[data-theme="dark"] .product-image-thumb {
+    background: #23272A !important;
+}
+
+[data-theme="dark"] .welcome-btn,
+[data-theme="dark"] .add-product-btn,
+[data-theme="dark"] .btn.save {
+    background: #2563EB !important;
+    color: #f1f1f1 !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.2s, color 0.2s;
+}
+
+[data-theme="dark"] .welcome-btn:hover,
+[data-theme="dark"] .add-product-btn:hover,
+[data-theme="dark"] .btn.save:hover {
+    background: #3B82F6 !important;
+    color: #fff !important;
+}
+
+[data-theme="dark"] .product-table th,
+[data-theme="dark"] .product-table td {
+    background: #23272A !important;
+    color: #f1f1f1 !important;
+    border-color: #333 !important;
+}
+
+[data-theme="dark"] .product-table th {
+    color: #60A5FA !important;
+    background: #202225 !important;
+}
+
+[data-theme="dark"] .product-form input,
+[data-theme="dark"] .product-form textarea,
+[data-theme="dark"] .product-form select {
+    background: #181A1B !important;
+    color: #f1f1f1 !important;
+    border: 1.5px solid #333 !important;
+    transition: border 0.2s;
+}
+
+[data-theme="dark"] .product-form input:focus,
+[data-theme="dark"] .product-form textarea:focus,
+[data-theme="dark"] .product-form select:focus {
+    border-color: #3B82F6 !important;
+}
+
+[data-theme="dark"] .product-form .btn.cancel {
+    background: #333 !important;
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .product-form .btn.cancel:hover {
+    background: #444 !important;
+    color: #fff !important;
+}
+
+[data-theme="dark"] .product-form-modal {
+    background: rgba(18,18,18,0.92) !important;
+}
+
+[data-theme="dark"] .availability-indicator.available {
+    background: #43a047 !important;
+}
+
+[data-theme="dark"] .availability-indicator.not-available {
+    background: #e53935 !important;
+}
+
+[data-theme="dark"] .action-btn {
+    color: #60A5FA !important;
+}
+
+[data-theme="dark"] .action-btn.delete {
+    color: #ef5350 !important;
+}
+
+[data-theme="dark"] .action-btn.edit:hover {
+    color: #42a5f5 !important;
+}
+
+[data-theme="dark"] .action-btn.delete:hover {
+    color: #b71c1c !important;
+}
+
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="number"],
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background: #23272A !important;
+    color: #f1f1f1 !important;
+    border: 1.5px solid #333 !important;
+}
+
+[data-theme="dark"] input[type="text"]:focus,
+[data-theme="dark"] input[type="number"]:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+    border-color: #3B82F6 !important;
+}
+
+[data-theme="dark"] .footer,
+[data-theme="dark"] .footer-top,
+[data-theme="dark"] .footer-copyright {
+    background: #222 !important;
+    color: #b0b3b8 !important;
+    border-top: 1px solid #23272A;
+}
+
+[data-theme="dark"] .footer-logo a,
+[data-theme="dark"] .footer-logo a:hover,
+[data-theme="dark"] .footer-logo a:focus {
+    color: #60A5FA !important;
+}
+
+[data-theme="dark"] .footer-social a i {
+    color: #60A5FA !important;
+}
+
+[data-theme="dark"] .footer-social a i:hover {
+    color: #3B82F6 !important;
+}
+
+[data-theme="dark"] .dark-mode-toggle button {
+    color: #f1f1f1 !important;
+} 

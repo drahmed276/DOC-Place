@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Product Management</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #f6f8fa;
+      margin: 0;
+      color: #222;
+    }
+    .dashboard-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      padding: 32px 24px 40px 24px;
+    }
+    .dashboard-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+    .dashboard-header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0;
+      color: #1a237e;
+    }
+    .add-product-btn {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .add-product-btn:hover {
+      background: #1565c0;
+    }
+    .product-form-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.25);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-form-modal.active {
+      display: flex;
+    }
+    .product-form {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 24px;
+      min-width: 320px;
+      max-width: 400px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .product-form h2 {
+      margin: 0 0 12px 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1976d2;
+    }
+    .product-form label {
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #333;
+    }
+    .product-form input[type="text"],
+    .product-form input[type="number"],
+    .product-form textarea,
+    .product-form select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      margin-bottom: 8px;
+      background: #f9f9f9;
+      transition: border 0.2s;
+    }
+    .product-form input[type="text"]:focus,
+    .product-form input[type="number"]:focus,
+    .product-form textarea:focus,
+    .product-form select:focus {
+      border-color: #1976d2;
+      outline: none;
+    }
+    .product-form input[type="file"] {
+      margin-bottom: 8px;
+    }
+    .product-form .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .product-form .btn {
+      padding: 8px 18px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .product-form .btn.save {
+      background: #1976d2;
+      color: #fff;
+    }
+    .product-form .btn.save:hover {
+      background: #1565c0;
+    }
+    .product-form .btn.cancel {
+      background: #e0e0e0;
+      color: #333;
+    }
+    .product-form .btn.cancel:hover {
+      background: #bdbdbd;
+    }
+    .close-modal {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      font-size: 1.2rem;
+      color: #888;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .close-modal:hover {
+      color: #1976d2;
+    }
+    .product-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      margin-top: 16px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .product-table th, .product-table td {
+      padding: 14px 10px;
+      text-align: left;
+      font-size: 1rem;
+    }
+    .product-table th {
+      background: #f1f5fb;
+      color: #1976d2;
+      font-weight: 600;
+      border-bottom: 2px solid #e3e8ee;
+    }
+    .product-table td {
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: middle;
+    }
+    .product-table tr:last-child td {
+      border-bottom: none;
+    }
+    .product-image-thumb {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1.5px solid #e0e0e0;
+      background: #f5f5f5;
+    }
+    .availability-indicator {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .available {
+      background: #43a047;
+    }
+    .not-available {
+      background: #e53935;
+    }
+    .action-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-right: 8px;
+      color: #1976d2;
+      transition: color 0.2s;
+    }
+    .action-btn:last-child {
+      margin-right: 0;
+    }
+    .action-btn.delete {
+      color: #e53935;
+    }
+    .action-btn.delete:hover {
+      color: #b71c1c;
+    }
+    .action-btn.edit:hover {
+      color: #1565c0;
+    }
+    @media (max-width: 800px) {
+      .dashboard-container {
+        padding: 12px 2vw 24px 2vw;
+      }
+      .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+      .product-form {
+        min-width: 0;
+        width: 95vw;
+        max-width: 98vw;
+      }
+      .product-table th, .product-table td {
+        font-size: 0.95rem;
+        padding: 10px 4px;
+      }
+    }
+    @media (max-width: 600px) {
+      .dashboard-header h1 {
+        font-size: 1.2rem;
+      }
+      .product-table th, .product-table td {
+        font-size: 0.9rem;
+        padding: 7px 2px;
+      }
+    }
+    
+    /* Tab Navigation Styles */
+    .nav-tabs-container {
+      margin-bottom: 24px;
+      border-bottom: 2px solid #e3e8ee;
+    }
+    
+    .nav-tabs {
+      border: none;
+      background: #f8f9fa;
+      border-radius: 8px 8px 0 0;
+      padding: 0 16px;
+    }
+    
+    .nav-tabs .nav-link {
+      border: none;
+      color: #6c757d;
+      font-weight: 500;
+      padding: 16px 24px;
+      border-radius: 8px 8px 0 0;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-tabs .nav-link:hover {
+      color: #1976d2;
+      background: rgba(25, 118, 210, 0.1);
+    }
+    
+    .nav-tabs .nav-link.active {
+      color: #1976d2;
+      background: #fff;
+      border-bottom: 3px solid #1976d2;
+    }
+    
+    .nav-tabs .nav-link i {
+      margin-right: 8px;
+    }
+    
+    /* Tab Header */
+    .tab-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e3e8ee;
+    }
+    
+    .tab-header h2 {
+      margin: 0;
+      color: #1976d2;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    /* Stats Container */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .stat-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-2px);
+    }
+    
+    .stat-card.bg-warning {
+      background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+      color: white;
+    }
+    
+    .stat-card.bg-success {
+      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+      color: white;
+    }
+    
+    .stat-card.bg-info {
+      background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+      color: white;
+    }
+    
+    .stat-card.bg-primary {
+      background: linear-gradient(135deg, #673ab7 0%, #512da8 100%);
+      color: white;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Review Table Styles */
+    .table {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    
+    .table th {
+      background: #f1f5fb;
+      color: #1976d2;
+      font-weight: 600;
+      border: none;
+      padding: 16px 12px;
+    }
+    
+    .table td {
+      padding: 16px 12px;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: middle;
+    }
+    
+    .table tbody tr:hover {
+      background: #f8f9fa;
+    }
+    
+    /* Review Rating Stars */
+    .review-rating {
+      color: #ffc107;
+      font-size: 16px;
+    }
+    
+    .review-text {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    /* Badge Styles */
+    .badge {
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .badge-warning {
+      background: #ff9800;
+      color: white;
+    }
+    
+    .badge-success {
+      background: #4caf50;
+      color: white;
+    }
+    
+    .badge-danger {
+      background: #f44336;
+      color: white;
+    }
+    
+    /* Review Actions */
+    .review-actions {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .btn-approve {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .btn-approve:hover {
+      background: #388e3c;
+    }
+    
+    .btn-reject {
+      background: #f44336;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .btn-reject:hover {
+      background: #d32f2f;
+    }
+    
+    .btn-delete {
+      background: #9e9e9e;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .btn-delete:hover {
+      background: #757575;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h1><i class="fa fa-cogs"></i> Admin Dashboard</h1>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs-container">
+      <ul class="nav nav-tabs" id="adminTabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="products-tab" data-toggle="tab" href="#products" role="tab">
+            <i class="fa fa-box"></i> Products Management
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab">
+            <i class="fa fa-comments"></i> Reviews Management
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="adminTabContent">
+      <!-- Products Tab -->
+      <div class="tab-pane fade show active" id="products" role="tabpanel">
+        <div class="tab-header">
+          <h2>Products Management</h2>
+          <button class="add-product-btn" id="openAddProductModal">
+            <i class="fa fa-plus"></i> Add New Product
+          </button>
+        </div>
+        
+        <div id="productListContainer">
+          <table class="product-table" id="productTable">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Availability</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productTableBody">
+              <!-- Product rows will be injected here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Reviews Tab -->
+      <div class="tab-pane fade" id="reviews" role="tabpanel">
+        <div class="tab-header">
+          <h2>Reviews Management</h2>
+        </div>
+        
+        <!-- Review Stats -->
+        <div class="stats-container">
+          <div class="stat-card bg-warning">
+            <div class="stat-number" id="pendingReviews">0</div>
+            <div class="stat-label">Pending Reviews</div>
+          </div>
+          <div class="stat-card bg-success">
+            <div class="stat-number" id="approvedReviews">0</div>
+            <div class="stat-label">Approved Reviews</div>
+          </div>
+          <div class="stat-card bg-info">
+            <div class="stat-number" id="totalReviews">0</div>
+            <div class="stat-label">Total Reviews</div>
+          </div>
+          <div class="stat-card bg-primary">
+            <div class="stat-number" id="avgRating">0.0</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+        </div>
+
+        <!-- Review Tabs -->
+        <ul class="nav nav-tabs" id="reviewTabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pending-tab" data-toggle="tab" href="#pending" role="tab">
+              Pending Reviews <span class="badge badge-warning" id="pendingBadge">0</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="approved-tab" data-toggle="tab" href="#approved" role="tab">
+              Approved Reviews <span class="badge badge-success" id="approvedBadge">0</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="rejected-tab" data-toggle="tab" href="#rejected" role="tab">
+              Rejected Reviews <span class="badge badge-danger" id="rejectedBadge">0</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="reviewTabContent">
+          <!-- Pending Reviews -->
+          <div class="tab-pane fade show active" id="pending" role="tabpanel">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Reviewer</th>
+                    <th>Rating</th>
+                    <th>Review</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="pendingReviewsTable">
+                  <!-- Pending reviews will be loaded here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Approved Reviews -->
+          <div class="tab-pane fade" id="approved" role="tabpanel">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Reviewer</th>
+                    <th>Rating</th>
+                    <th>Review</th>
+                    <th>Approved Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="approvedReviewsTable">
+                  <!-- Approved reviews will be loaded here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Rejected Reviews -->
+          <div class="tab-pane fade" id="rejected" role="tabpanel">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Reviewer</th>
+                    <th>Rating</th>
+                    <th>Review</th>
+                    <th>Rejected Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="rejectedReviewsTable">
+                  <!-- Rejected reviews will be loaded here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Form Modal -->
+  <div class="product-form-modal" id="productFormModal">
+    <form class="product-form" id="productForm">
+      <button type="button" class="close-modal" id="closeProductModal"><i class="fa fa-times"></i></button>
+      <h2 id="formTitle">Add New Product</h2>
+      <input type="hidden" id="productId" name="productId">
+      <label for="productImage">Product Image</label>
+      <input type="file" id="productImage" name="productImage" accept="image/*">
+      <img id="imagePreview" src="" alt="Preview" style="display:none; width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-bottom: 8px;" />
+      <label for="productTitle">Product Title</label>
+      <input type="text" id="productTitle" name="productTitle" required>
+      <label for="productPrice">Product Price (EGP)</label>
+      <input type="number" id="productPrice" name="productPrice" min="0" step="0.01" required>
+      <label for="productDescription">Product Description</label>
+      <textarea id="productDescription" name="productDescription" rows="3" required></textarea>
+      <label for="productAvailability">Availability</label>
+      <select id="productAvailability" name="productAvailability" required>
+        <option value="available">Available</option>
+        <option value="not-available">Not Available</option>
+      </select>
+      <div class="form-actions">
+        <button type="button" class="btn cancel" id="cancelProductBtn">Cancel</button>
+        <button type="submit" class="btn save">Save</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Product data (in-memory for demo; replace with backend integration for production)
+    let products = [
+      {
+        id: 1,
+        image: '',
+        title: 'Classic Balto',
+        price: 300,
+        description: 'Very comfort balto during your shift',
+        availability: 'available'
+      },
+      {
+        id: 2,
+        image: '',
+        title: 'Black Scrub',
+        price: 450,
+        description: 'Comfortable black scrub',
+        availability: 'not-available'
+      }
+    ];
+    let editingProductId = null;
+
+    // Reviews data (in-memory for demo; replace with backend integration for production)
+    let reviews = [
+      {
+        id: 1,
+        name: 'Ahmed Mohamed',
+        city: 'Cairo',
+        rating: 5,
+        review: 'خدمة ممتازة جداً، المنتجات عالية الجودة والتوصيل سريع',
+        photo: '',
+        status: 'pending',
+        createdAt: new Date('2024-01-15'),
+        approvedAt: null,
+        approvedBy: null
+      },
+      {
+        id: 2,
+        name: 'Fatma Ali',
+        city: 'Alexandria',
+        rating: 4,
+        review: 'المنتجات جميلة والخدمة محترمة، أنصح بيهم',
+        photo: '',
+        status: 'approved',
+        createdAt: new Date('2024-01-10'),
+        approvedAt: new Date('2024-01-12'),
+        approvedBy: 'admin'
+      },
+      {
+        id: 3,
+        name: 'Omar Hassan',
+        city: 'Giza',
+        rating: 5,
+        review: 'أفضل مكان لشراء الملابس الطبية، أسعار معقولة وجودة عالية',
+        photo: '',
+        status: 'approved',
+        createdAt: new Date('2024-01-08'),
+        approvedAt: new Date('2024-01-09'),
+        approvedBy: 'admin'
+      }
+    ];
+
+    // Initialize dashboard
+    document.addEventListener('DOMContentLoaded', function() {
+      loadProducts();
+      loadReviews();
+      setupEventListeners();
+    });
+
+    function setupEventListeners() {
+      // Product form modal
+      document.getElementById('openAddProductModal').addEventListener('click', openAddProductModal);
+      document.getElementById('closeProductModal').addEventListener('click', closeProductModal);
+      document.getElementById('cancelProductBtn').addEventListener('click', closeProductModal);
+      document.getElementById('productForm').addEventListener('submit', handleProductSubmit);
+      
+      // Image preview
+      document.getElementById('productImage').addEventListener('change', handleImagePreview);
+      
+      // Tab switching
+      document.querySelectorAll('#adminTabs .nav-link').forEach(tab => {
+        tab.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = this.getAttribute('href');
+          switchTab(target);
+        });
+      });
+    }
+
+    function switchTab(targetId) {
+      // Remove active class from all tabs and content
+      document.querySelectorAll('#adminTabs .nav-link').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('#adminTabContent .tab-pane').forEach(content => content.classList.remove('show', 'active'));
+      
+      // Add active class to clicked tab and corresponding content
+      document.querySelector(`[href="${targetId}"]`).classList.add('active');
+      document.querySelector(targetId).classList.add('show', 'active');
+    }
+
+    // Reviews Management Functions
+    function loadReviews() {
+      updateReviewStats();
+      loadPendingReviews();
+      loadApprovedReviews();
+      loadRejectedReviews();
+    }
+
+    function updateReviewStats() {
+      const pending = reviews.filter(r => r.status === 'pending').length;
+      const approved = reviews.filter(r => r.status === 'approved').length;
+      const rejected = reviews.filter(r => r.status === 'rejected').length;
+      const total = reviews.length;
+      
+      const avgRating = reviews.length > 0 
+        ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1)
+        : '0.0';
+
+      document.getElementById('pendingReviews').textContent = pending;
+      document.getElementById('approvedReviews').textContent = approved;
+      document.getElementById('totalReviews').textContent = total;
+      document.getElementById('avgRating').textContent = avgRating;
+      
+      document.getElementById('pendingBadge').textContent = pending;
+      document.getElementById('approvedBadge').textContent = approved;
+      document.getElementById('rejectedBadge').textContent = rejected;
+    }
+
+    function loadPendingReviews() {
+      const pendingReviews = reviews.filter(r => r.status === 'pending');
+      const tbody = document.getElementById('pendingReviewsTable');
+      
+      tbody.innerHTML = pendingReviews.length === 0 
+        ? '<tr><td colspan="5" class="text-center">No pending reviews</td></tr>'
+        : pendingReviews.map(review => `
+            <tr>
+              <td>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  ${review.photo ? `<img src="${review.photo}" alt="${review.name}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">` : ''}
+                  <div>
+                    <div style="font-weight: 600;">${review.name}</div>
+                    <div style="font-size: 0.85rem; color: #666;">${review.city}</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="review-rating">
+                  ${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}
+                </div>
+              </td>
+              <td>
+                <div class="review-text" title="${review.review}">${review.review}</div>
+              </td>
+              <td>${formatDate(review.createdAt)}</td>
+              <td>
+                <div class="review-actions">
+                  <button class="btn-approve" onclick="approveReview(${review.id})">
+                    <i class="fa fa-check"></i> Approve
+                  </button>
+                  <button class="btn-reject" onclick="rejectReview(${review.id})">
+                    <i class="fa fa-times"></i> Reject
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `).join('');
+    }
+
+    function loadApprovedReviews() {
+      const approvedReviews = reviews.filter(r => r.status === 'approved');
+      const tbody = document.getElementById('approvedReviewsTable');
+      
+      tbody.innerHTML = approvedReviews.length === 0 
+        ? '<tr><td colspan="5" class="text-center">No approved reviews</td></tr>'
+        : approvedReviews.map(review => `
+            <tr>
+              <td>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  ${review.photo ? `<img src="${review.photo}" alt="${review.name}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">` : ''}
+                  <div>
+                    <div style="font-weight: 600;">${review.name}</div>
+                    <div style="font-size: 0.85rem; color: #666;">${review.city}</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="review-rating">
+                  ${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}
+                </div>
+              </td>
+              <td>
+                <div class="review-text" title="${review.review}">${review.review}</div>
+              </td>
+              <td>${formatDate(review.approvedAt)}</td>
+              <td>
+                <div class="review-actions">
+                  <button class="btn-delete" onclick="deleteReview(${review.id})">
+                    <i class="fa fa-trash"></i> Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `).join('');
+    }
+
+    function loadRejectedReviews() {
+      const rejectedReviews = reviews.filter(r => r.status === 'rejected');
+      const tbody = document.getElementById('rejectedReviewsTable');
+      
+      tbody.innerHTML = rejectedReviews.length === 0 
+        ? '<tr><td colspan="5" class="text-center">No rejected reviews</td></tr>'
+        : rejectedReviews.map(review => `
+            <tr>
+              <td>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  ${review.photo ? `<img src="${review.photo}" alt="${review.name}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">` : ''}
+                  <div>
+                    <div style="font-weight: 600;">${review.name}</div>
+                    <div style="font-size: 0.85rem; color: #666;">${review.city}</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="review-rating">
+                  ${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}
+                </div>
+              </td>
+              <td>
+                <div class="review-text" title="${review.review}">${review.review}</div>
+              </td>
+              <td>${formatDate(review.rejectedAt)}</td>
+              <td>
+                <div class="review-actions">
+                  <button class="btn-delete" onclick="deleteReview(${review.id})">
+                    <i class="fa fa-trash"></i> Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `).join('');
+    }
+
+    function approveReview(reviewId) {
+      const review = reviews.find(r => r.id === reviewId);
+      if (review) {
+        review.status = 'approved';
+        review.approvedAt = new Date();
+        review.approvedBy = 'admin';
+        
+        // In a real app, you would make an API call here
+        // await fetch(`/api/reviews/${reviewId}/approve`, { method: 'PUT' });
+        
+        loadReviews();
+        showNotification('Review approved successfully!', 'success');
+      }
+    }
+
+    function rejectReview(reviewId) {
+      const review = reviews.find(r => r.id === reviewId);
+      if (review) {
+        review.status = 'rejected';
+        review.rejectedAt = new Date();
+        review.rejectedBy = 'admin';
+        
+        // In a real app, you would make an API call here
+        // await fetch(`/api/reviews/${reviewId}/reject`, { method: 'PUT' });
+        
+        loadReviews();
+        showNotification('Review rejected successfully!', 'success');
+      }
+    }
+
+    function deleteReview(reviewId) {
+      if (confirm('Are you sure you want to delete this review?')) {
+        reviews = reviews.filter(r => r.id !== reviewId);
+        
+        // In a real app, you would make an API call here
+        // await fetch(`/api/reviews/${reviewId}`, { method: 'DELETE' });
+        
+        loadReviews();
+        showNotification('Review deleted successfully!', 'success');
+      }
+    }
+
+    function formatDate(date) {
+      return new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }).format(date);
+    }
+
+    function showNotification(message, type = 'info') {
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 16px 24px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        z-index: 9999;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        animation: slideIn 0.3s ease;
+      `;
+      
+      if (type === 'success') {
+        notification.style.background = '#4caf50';
+      } else if (type === 'error') {
+        notification.style.background = '#f44336';
+      } else {
+        notification.style.background = '#2196f3';
+      }
+      
+      notification.textContent = message;
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.remove();
+      }, 3000);
+    }
+
+    // Modal controls
+    const productFormModal = document.getElementById('productFormModal');
+    const openAddProductModalBtn = document.getElementById('openAddProductModal');
+    const closeProductModalBtn = document.getElementById('closeProductModal');
+    const cancelProductBtn = document.getElementById('cancelProductBtn');
+    const productForm = document.getElementById('productForm');
+    const formTitle = document.getElementById('formTitle');
+    const imagePreview = document.getElementById('imagePreview');
+    const productImageInput = document.getElementById('productImage');
+
+    function openProductModal(edit = false, product = null) {
+      productForm.reset();
+      imagePreview.style.display = 'none';
+      imagePreview.src = '';
+      editingProductId = null;
+      if (edit && product) {
+        formTitle.textContent = 'Edit Product';
+        document.getElementById('productId').value = product.id;
+        document.getElementById('productTitle').value = product.title;
+        document.getElementById('productPrice').value = product.price;
+        document.getElementById('productDescription').value = product.description;
+        document.getElementById('productAvailability').value = product.availability;
+        editingProductId = product.id;
+        if (product.image) {
+          imagePreview.src = product.image;
+          imagePreview.style.display = 'block';
+        }
+      } else {
+        formTitle.textContent = 'Add New Product';
+      }
+      productFormModal.classList.add('active');
+    }
+    function closeProductModal() {
+      productFormModal.classList.remove('active');
+      productForm.reset();
+      imagePreview.style.display = 'none';
+      imagePreview.src = '';
+      editingProductId = null;
+    }
+    openAddProductModalBtn.onclick = () => openProductModal();
+    closeProductModalBtn.onclick = closeProductModal;
+    cancelProductBtn.onclick = closeProductModal;
+    productImageInput.onchange = function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          imagePreview.src = evt.target.result;
+          imagePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+
+    // Render product list
+    function renderProductTable() {
+      const tbody = document.getElementById('productTableBody');
+      tbody.innerHTML = '';
+      products.forEach(product => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><img class="product-image-thumb" src="${product.image || 'https://via.placeholder.com/56x56?text=IMG'}" alt="${product.title}"></td>
+          <td>${product.title}</td>
+          <td>${product.price} EGP</td>
+          <td>${product.description}</td>
+          <td><span class="availability-indicator ${product.availability === 'available' ? 'available' : 'not-available'}"></span>${product.availability === 'available' ? 'Available' : 'Not Available'}</td>
+          <td>
+            <button class="action-btn edit" title="Edit" onclick="editProduct(${product.id})"><i class="fa fa-pen"></i></button>
+            <button class="action-btn delete" title="Delete" onclick="deleteProduct(${product.id})"><i class="fa fa-trash"></i></button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Add/Edit Product
+    productForm.onsubmit = function(e) {
+      e.preventDefault();
+      const id = editingProductId || Date.now();
+      const title = document.getElementById('productTitle').value.trim();
+      const price = parseFloat(document.getElementById('productPrice').value);
+      const description = document.getElementById('productDescription').value.trim();
+      const availability = document.getElementById('productAvailability').value;
+      let image = imagePreview.src && imagePreview.style.display !== 'none' ? imagePreview.src : '';
+      if (editingProductId) {
+        // Edit
+        products = products.map(p => p.id === editingProductId ? { ...p, title, price, description, availability, image } : p);
+      } else {
+        // Add
+        products.push({ id, title, price, description, availability, image });
+      }
+      renderProductTable();
+      closeProductModal();
+    };
+
+    // Edit Product
+    window.editProduct = function(id) {
+      const product = products.find(p => p.id === id);
+      if (product) openProductModal(true, product);
+    };
+
+    // Delete Product
+    window.deleteProduct = function(id) {
+      if (confirm('Are you sure you want to delete this product?')) {
+        products = products.filter(p => p.id !== id);
+        renderProductTable();
+      }
+    };
+
+    // Initial render
+    renderProductTable();
+  </script>
+</body>
+</html> 
